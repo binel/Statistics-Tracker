@@ -27,6 +27,12 @@ d3.csv("enrollment_stats.csv", function (data) {
     ring.innerRadius = "50%";
     var myLegend = myChart.addLegend(500, 20, 90, 300, "left");
 
+    ring.addEventHandler("click", function(e){
+        console.log(e);
+        console.log(getLink(data, e.seriesValue[0]));
+        window.location.assign("../general/general.html");
+    })
+
     //set default color scheme
     myChart.defaultColors = [
                 new dimple.color("#1f77b4"),
@@ -55,3 +61,11 @@ d3.csv("enrollment_stats.csv", function (data) {
 
 
 });
+
+function getLink(a, key){
+    for (var j = 0;  j < a.length; j++){
+        console.log(a[j].Major);
+        if ((a[j].Major) == key) return a[j].Students;
+    }
+    return null;
+}
