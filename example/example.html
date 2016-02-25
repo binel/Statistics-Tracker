@@ -1,0 +1,46 @@
+<html ng-app>
+
+<head>
+
+    <link rel="import" href="../header.html">
+
+</head>
+
+<body>
+
+    <!-- add navbar-->
+    <div ng-include src="'../navbar.html'"></div>
+
+    <!-- side bar -->
+    <nav class="col-xs-2" id="myScrollspy">
+        <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="100">
+            <li><a id="link1" href="#section1">Gender Distribution by Major</a></li>
+            <li><a id="link2" href="#section2">Enrollment by Major</a></li>
+        </ul>
+    </nav>
+    <!-- body content -->
+    <div class="col-xs-offset-2">
+        <h1>College of Engineering</h1>
+        <hr>
+        <div id="section1">
+            <h2>Gender Distribution by Major</h2>
+            <button id="sortFemale" onclick="sortFemale()">Sort # Female</button>
+            <button id="sortMale" onclick="sortMale()">Sort # Male</button>
+            <button id="sortFemalePercent" onclick="sortFemalePercent()">Sort % Female</button>
+            <button id="sortMalePercent" onclick="sortMalePercent()">Sort % Male</button>
+            <div id="barChart"></div>
+            <script src="ex_bar.js"></script>
+
+        </div>
+        <div id="section2">
+            <h2>Enrollment by Major</h2>
+            <div id="ringChart"></div>
+            <script src="ex_ring.js"></script>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

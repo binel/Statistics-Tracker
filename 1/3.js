@@ -66,6 +66,33 @@ d3.csv("enrollment_stats.csv", function (data) {
             var ring = myChart.addSeries("major", dimple.plot.pie);
             ring.innerRadius = "50%";
             var myLegend = myChart.addLegend(500, 20, 90, 300, "left");
+
+            //set default color scheme
+            myChart.defaultColors = [
+                new dimple.color("#1f77b4"),
+                new dimple.color("#aec7e8"),
+                new dimple.color("#ff7f0e"),
+                new dimple.color("#ffbb78"),
+                new dimple.color("#2ca02c"),
+                new dimple.color("#98df8a"),
+                new dimple.color("#d62728"),
+                new dimple.color("#ff9896"),
+                new dimple.color("#9467bd"),
+                new dimple.color("#c5b0d5"),
+                new dimple.color("#8c564b"),
+                new dimple.color("#c49c94"),
+                new dimple.color("#e377c2"),
+                new dimple.color("#f7b6d2"),
+                new dimple.color("#7f7f7f"),
+                new dimple.color("#c7c7c7"),
+                new dimple.color("#bcbd22"),
+                new dimple.color("#dbdb8d"),
+                new dimple.color("#17becf"),
+                new dimple.color("#9edae5")
+
+
+            ];
+
             myChart.draw();
 
 
