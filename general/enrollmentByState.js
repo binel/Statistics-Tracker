@@ -20,6 +20,9 @@ var g = svg.append("g")
 
 var data = {};
 
+var color = d3.scale.quantize()
+                .range(["rgb(237,248,233)","rgb(186,228,179)","rgb(116,196,118)","rgb(49,163,84)","rgb(0,109,22)"]);
+
 //import CSV data then generate map
 d3.csv("UndergradEnrollmentISU.csv", function (csv_data) {
     console.log(data);
@@ -32,6 +35,13 @@ function generateMap() {
 
     //import json data for state boundaries
     d3.json("us-states.json", function (json) {
+
+
+        //set color input domain
+        color.domain([
+            d3.min(data, function(d){return d.electorate;}),
+            d3.max(data, function(d){return d.electorate;})
+        ]);
 
         //merge csv data with geo json
         for (var i = 0; i < data.length; i++) {
@@ -63,9 +73,10 @@ function generateMap() {
             .style("stroke-width", "0.5")
             .style("fill", function (d) {
                 var electorate = d.properties.electorate;
-                if (electorate > 20) return 'crimson';
-                else if (electorate > 10) return 'red';
-                else return 'green';
+                if(electorate){
+                    return color(electorate);
+                }
+                else return "#ccc";
             });
 
 
@@ -85,7 +96,12 @@ function generateMap() {
             })
             .attr("text-anchor", "middle")
             .attr('font-size', '6pt')
-            .attr('fill', 'white');
+            .attr('fill', function(d) {
+                var electorate = d.properties.electorate;
+                if(electorate < 40) return 'black';
+                return 'white';
+
+        });
 
 
     });
