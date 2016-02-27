@@ -20,8 +20,9 @@ var g = svg.append("g")
 
 var data = {};
 
-var color = d3.scale.quantize()
-                .range(["rgb(237,248,233)","rgb(186,228,179)","rgb(116,196,118)","rgb(49,163,84)","rgb(0,109,22)"]);
+var color = d3.scale.log()
+                .range(["rgb(237,248,233)","rgb(186,228,179)","rgb(116,196,118)","rgb(49,163,84)","rgb(0,109,22)", "rgb(0,80,0)"]);
+color.base(1000);
 
 //import CSV data then generate map
 d3.csv("UndergradEnrollmentISU.csv", function (csv_data) {
