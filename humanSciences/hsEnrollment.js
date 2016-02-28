@@ -14,11 +14,11 @@ function title(svg, title) {
         });
 }
 
-d3.csv("enrollment_stats.csv", function (data) {
+d3.csv("humanSciences_enrollment.csv", function (data) {
 
     var svg03 = dimple.newSvg("#ringChart", 800, 600);
     svg03.attr("id", "svg03");
-    title(svg03, "Major / Student")
+    title(svg03, "Students/Major");
     var myChart = new dimple.chart(svg03, data);
     myChart.setBounds(20, 20, 460, 360)
     var p = myChart.addMeasureAxis("p", "Students");
@@ -30,7 +30,7 @@ d3.csv("enrollment_stats.csv", function (data) {
     ring.addEventHandler("click", function(e){
         console.log(e);
         console.log(getLink(data, e.seriesValue[0]));
-        window.location.assign("../general/general.html");
+       // window.location.assign("../general/general.html");
     })
 
     //set default color scheme
