@@ -12,33 +12,43 @@
     <div ng-include src="'../navbar.html'"></div>
 
     <!-- side bar -->
-    <h1>this is general</h1>
+    <h1>General</h1>
     <nav class="col-xs-2" id="myScrollspy">
         <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="100">
-            <li><a id="link2" href="#genderLabel">Gender Distribution by Major</a></li>
-            <li><a id="link2" href="#enrollmentLabel">Enrollment by Major</a></li>
-            <li><a id="link2" href="#section3">Section 3</a></li>
+            <li><a id="link1" href="#enrollmentLabel">Enrollment by College</a></li>
+            <li><a id="link2" href="#genderLabel">Gender Distribution by College</a></li>
+            <li><a id="link3" href="#diversity">Diversity by College</a></li>
+            <li><a id="link4" href="#stateLabel">Enrollment By State</a></li>
         </ul>
     </nav>
     <!-- body content -->
     <div class="col-xs-offset-2">
+        <h1>General</h1>
+        <hr>
+        <div id="enrollmentLabel">
+            <h2>Enrollment By College</h2>
+            <div id="ringChart"></div>
+            <script src="general_enrollment.js"></script>
+
+        </div>
+
+        <!-- TODO -->
         <div id="genderLabel">
+            <h2>Gender Distribution By College</h2>
             <script src="/1/1.js"></script>
 
         </div>
-        <div id="enrollmentLabel">
-            <script src="/1/2.js"></script>
 
-        </div>
-        <div id="enrollmentDiversity">
-            <h1>Enrollment by Race</h1>
+        <div id="diversity">
+            <h2>Enrollment by Race</h2>
             <button id="removeMajority" onclick="removeMajority(true)">Only Show Minority</button>
             <button id="replaceMajority" onclick="removeMajority(false)">Show all data</button>
             <div id = "diversity"></div>
             <script src="collegeDiversity.js"></script>
         </div>
-         <div>
-            <h3>Undergraduate Enrollment By State</h3>
+
+         <div id="stateLabel">
+            <h2>Undergraduate Enrollment By State</h2>
             <div class="map" id="map1"></div>
             <script src="enrollmentByState.js"></script>
         </div>
