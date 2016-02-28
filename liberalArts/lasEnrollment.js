@@ -82,8 +82,6 @@ d3.csv("las_enrollment.csv", function (data) {
                 new dimple.color("#756bb1"),
                 new dimple.color("#bcbddc")
 
-
-
             ];
 
 

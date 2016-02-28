@@ -31,6 +31,15 @@
             <script src="hsEnrollment.js"></script>
         </div>
 
+        <div id="diversity">
+            <h3>Undergraduate Enrollment By Race</h3>
+            <button id="removeMajority" onclick="removeMajority(true)">Only Show Minority</button>
+            <button id="replaceMajority" onclick="removeMajority(false)">Show all data</button>
+            <div id="hsDiversity"></div>
+
+            <script src="hsDiversity.js"></script>
+        </div>
+
         <div id="genderLabel">
             <h2>Gender Distribution by Major</h2>
             <button id="sortFemale" onclick="sortFemale()">Sort # Female</button>
