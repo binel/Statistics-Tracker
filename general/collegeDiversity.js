@@ -1,18 +1,29 @@
 //Dimple re-implementation
 
 var generalByRacesvg = dimple.newSvg("#diversity", 600, 400);
-
+var chart;
+var chartData;
+var allValues;
 //import CSV and build dataset
 d3.csv("generalByRace.csv", function (data) {
-    var chart = new dimple.chart(generalByRacesvg, data);
+    chartData = data;
+    chart = new dimple.chart(generalByRacesvg, data);
     var x = chart.addCategoryAxis("x", "College");
     x.addOrderRule("Ordinal");
     chart.addMeasureAxis("y", "Students");
     chart.addSeries("Race", dimple.plot.bar);
     chart.draw(); 
+    allValues = dimple.getUniqueValues(chartData, "Race");
 });
 
-
+function removeMajority(removeMajority) {
+    filterValues =  allValues.slice();
+    if(removeMajority){
+        filterValues.shift();
+    }
+    chart.data = dimple.filterData(chartData, "Race", filterValues);
+    chart.draw();
+}
 
 //var width = 600;
 //var height = 400;
