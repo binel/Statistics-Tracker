@@ -1,11 +1,11 @@
-var agByRaceSVG = dimple.newSvg("#agDiversity", 600, 400);
+var designByRaceSVG = dimple.newSvg("#designDiversity", 600, 400);
 var chartData;
 var allValues;
 var chart;
 //import CSV and build dataset
-d3.csv("agByRace.csv", function (data) {
+d3.csv("designByRace.csv", function (data) {
     chartData = data;
-    chart = new dimple.chart(agByRaceSVG, data);
+    chart = new dimple.chart(designByRaceSVG, data);
     var x = chart.addCategoryAxis("x", "Major");
     x.addOrderRule("Ordinal");
     chart.addMeasureAxis("y", "Students");
@@ -22,5 +22,3 @@ function removeMajority(removeMajority) {
     chart.data = dimple.filterData(chartData, "Race", filterValues);
     chart.draw();
 }
-
-
