@@ -20,7 +20,7 @@ d3.csv("general_enrollment.csv", function (data) {
     svg03.attr("id", "ringSvg");
     title(svg03, "Students/College")
     var myChart = new dimple.chart(svg03, data);
-    myChart.setBounds(20, 20, 460, 360)
+    myChart.setBounds(20, 20, 460, 460);
     var p = myChart.addMeasureAxis("p", "Students");
     p.tickFormat = ",.f";
     var ring = myChart.addSeries("College", dimple.plot.pie);

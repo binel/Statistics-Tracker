@@ -10,27 +10,41 @@
     <!-- add navbar-->
     <div ng-include src="'../navbar.html'"></div>
 
-    <h1>this is Agriculture</h1>
+    <nav class="col-xs-2" id="myScrollspy">
+        <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="100">
+            <li><a id="link1" href="#enrollmentLabel">Enrollment by Major</a></li>
+            <li><a id="link2" href="#genderLabel">Gender Distribution by Major</a></li>
+            <li><a id="link3" href="#diversity">Diversity by Major</a></li>
+        </ul>
+    </nav>
 
-    <div class="col-xs-2">
-        <div class="list-group">
-            <a href="#" class="list-group-item">Cras justo odio</a>
-            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-            <a href="#" class="list-group-item">Morbi leo risus</a>
-            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-            <a href="#" class="list-group-item">Vestibulum at eros</a>
-        </div>
-    </div>
-        <!-- body content -->
+    <!-- body content -->
     <div class="col-xs-offset-2">
-         <div>
-            <h3>Undergraduate Enrollment By Race</h3>
-            <div id="agDiversity"></div>
-            <script src="agDiversity.js"></script>
+        <h1>College of Agriculture</h1>
+        <a href="..general/general.html">Back to General</a>
+        <hr>
+
+
+        <div id="enrollmentLabel">
+            <h2>Enrollment by Major</h2>
+            <div id="ringChart"></div>
+            <script src="agEnrollment.js"></script>
         </div>
 
+        <div id="genderLabel">
+            <h2>Gender Distribution by Major</h2>
+            <button id="sortFemale" onclick="sortFemale()">Sort # Female</button>
+            <button id="sortMale" onclick="sortMale()">Sort # Male</button>
+            <button id="sortFemalePercent" onclick="sortFemalePercent()">Sort % Female</button>
+            <button id="sortMalePercent" onclick="sortMalePercent()">Sort % Male</button>
+            <div id="barChart"></div>
+            <!--<script src=".js"></script>-->
+        </div>
+
+
+
     </div>
-    <div>
+
 </body>
 
 </html>

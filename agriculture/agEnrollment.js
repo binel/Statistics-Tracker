@@ -14,23 +14,23 @@ function title(svg, title) {
         });
 }
 
-d3.csv("enrollment_stats.csv", function (data) {
+d3.csv("agriculture_enrollment.csv", function (data) {
 
     var svg03 = dimple.newSvg("#ringChart", 800, 600);
     svg03.attr("id", "svg03");
     title(svg03, "Major / Student")
     var myChart = new dimple.chart(svg03, data);
-    myChart.setBounds(20, 20, 460, 360)
+    myChart.setBounds(20, 20, 460, 460)
     var p = myChart.addMeasureAxis("p", "Students");
     p.tickFormat = ",.f";
     var ring = myChart.addSeries("Major", dimple.plot.pie);
     ring.innerRadius = "50%";
-    var myLegend = myChart.addLegend(500, 20, 90, 300, "left");
+    var myLegend = myChart.addLegend(500, 20, 90, 400, "left");
 
-    ring.addEventHandler("click", function(e){
+    ring.addEventHandler("click", function (e) {
         console.log(e);
         console.log(getLink(data, e.seriesValue[0]));
-        window.location.assign("../general/general.html");
+        //window.location.assign("../general/general.html");
     })
 
     //set default color scheme
@@ -54,7 +54,18 @@ d3.csv("enrollment_stats.csv", function (data) {
                 new dimple.color("#bcbd22"),
                 new dimple.color("#dbdb8d"),
                 new dimple.color("#17becf"),
-                new dimple.color("#9edae5")
+                new dimple.color("#9edae5"),
+                new dimple.color("#5254a3"),
+                new dimple.color("#9c9ede"),
+                new dimple.color("#8ca252"),
+                new dimple.color("#cedb9c"),
+                new dimple.color("#bd9e39"),
+                new dimple.color("#e7cb94"),
+                new dimple.color("#ad494a"),
+                new dimple.color("#e7969c"),
+                new dimple.color("#a55194"),
+                new dimple.color("#de9ed6")
+
             ];
 
     myChart.draw();
@@ -62,8 +73,8 @@ d3.csv("enrollment_stats.csv", function (data) {
 
 });
 
-function getLink(a, key){
-    for (var j = 0;  j < a.length; j++){
+function getLink(a, key) {
+    for (var j = 0; j < a.length; j++) {
         console.log(a[j].Major);
         if ((a[j].Major) == key) return a[j].Students;
     }

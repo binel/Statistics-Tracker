@@ -14,23 +14,23 @@ function title(svg, title) {
         });
 }
 
-d3.csv("enrollment_stats.csv", function (data) {
+d3.csv("las_enrollment.csv", function (data) {
 
-    var svg03 = dimple.newSvg("#ringChart", 800, 600);
+    var svg03 = dimple.newSvg("#ringChart", 800, 700);
     svg03.attr("id", "svg03");
-    title(svg03, "Major / Student")
+    title(svg03, "Students/Major")
     var myChart = new dimple.chart(svg03, data);
-    myChart.setBounds(20, 20, 460, 360)
+    myChart.setBounds(20, 20, 460, 460);
     var p = myChart.addMeasureAxis("p", "Students");
     p.tickFormat = ",.f";
     var ring = myChart.addSeries("Major", dimple.plot.pie);
     ring.innerRadius = "50%";
-    var myLegend = myChart.addLegend(500, 20, 90, 300, "left");
+    var myLegend = myChart.addLegend(500, 20, 90, 650, "left");
 
     ring.addEventHandler("click", function(e){
         console.log(e);
         console.log(getLink(data, e.seriesValue[0]));
-        window.location.assign("../general/general.html");
+        //window.location.assign("../general/general.html");
     })
 
     //set default color scheme
@@ -54,8 +54,38 @@ d3.csv("enrollment_stats.csv", function (data) {
                 new dimple.color("#bcbd22"),
                 new dimple.color("#dbdb8d"),
                 new dimple.color("#17becf"),
-                new dimple.color("#9edae5")
+                new dimple.color("#9edae5"),
+                new dimple.color("#5254a3"),
+                new dimple.color("#9c9ede"),
+                new dimple.color("#8ca252"),
+                new dimple.color("#cedb9c"),
+                new dimple.color("#bd9e39"),
+                new dimple.color("#e7cb94"),
+                new dimple.color("#ad494a"),
+                new dimple.color("#e7969c"),
+                new dimple.color("#a55194"),
+                new dimple.color("#de9ed6"),
+                new dimple.color("#393b79"),
+                new dimple.color("#6b6ecf"),
+                new dimple.color("#637939"),
+                new dimple.color("#b5cf6b"),
+                new dimple.color("#8c6d31"),
+                new dimple.color("#e7ba52"),
+                new dimple.color("#843c39"),
+                new dimple.color("#d6616b"),
+                new dimple.color("#7b4173"),
+                new dimple.color("#ce6bdb"),
+                new dimple.color("#e6550d"),
+                new dimple.color("#fdae6b"),
+                new dimple.color("#31a354"),
+                new dimple.color("#a1d99b"),
+                new dimple.color("#756bb1"),
+                new dimple.color("#bcbddc")
+
+
+
             ];
+
 
     myChart.draw();
 
