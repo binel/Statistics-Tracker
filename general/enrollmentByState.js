@@ -98,9 +98,7 @@ function generateMap() {
             .attr("text-anchor", "middle")
             .attr('font-size', '6pt')
             .attr('fill', function(d) {
-                var electorate = d.properties.electorate;
-                if(electorate < 40) return 'black';
-                return 'white';
+                return 'black';
 
         });
 
