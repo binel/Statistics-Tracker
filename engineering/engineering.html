@@ -4,62 +4,6 @@
 
     <link rel="import" href="../header.html">
 
-    <style>
-        .x-axis path,
-        .x-axis line {
-            fill: none;
-            stroke: grey;
-        }
-
-        .x-axis text {
-            font-size: 11px;
-            font-family: sans-serif;
-        }
-
-        .y-axis text {
-            font-size: 11px;
-            font-family: sans-serif;
-        }
-
-        .y-axis path,
-        .y-axis line {
-            fill: none;
-            stroke: grey;
-        }
-
-        #gender {
-            margin-top: 10px;
-        }
-
-        .tooltip {
-            background: #eee;
-            box-shadow: 0 0 5px #777;
-            color: #333;
-            top: 95px;
-            left: 130px;
-            width: 100px;
-            z-index: 10;
-            padding: 10px;
-            position: absolute;
-            display: none;
-            font-size: 12px;
-            text-align: center;
-        }
-
-        svg text {
-            pointer-events: none;
-        }
-
-        .affix {
-            top: 20px;
-        }
-
-        #link2 {
-            color: black;
-        }
-    </style>
-
-
 </head>
 
 <body>
@@ -70,30 +14,32 @@
     <!-- side bar -->
     <nav class="col-xs-2" id="myScrollspy">
         <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="100">
-            <li><a id="link2" href="#enrollmentLabel">Enrollment by Major</a></li>
-            <li><a id="link2" href="#genderLabel">Gender Distribution by Major</a></li>
-            <li><a id="link2" href="#section3">Section 3</a></li>
+            <li><a id="link1" style="color:black" href="#section1">Enrollment by Major</a></li>
+            <li><a id="link2" style="color:black" href="#section2">Gender Distribution by Major</a></li>
+            <li><a id="link2" style="color:black" href="#section3">Undergraduate Enrollment By Race</a></li>
         </ul>
     </nav>
     <!-- body content -->
     <div class="col-xs-offset-2">
-        <div id="genderLabel">
-            <h2>Gender Distribution By Engineering Major</h2>
+        <h1>College of Engineering</h1>
+        <hr>
+        <div id="section1">
+            <h2>Enrollment by Major</h2>
+            <div id="ringChart"></div>
+            <script src="engineering_enrollment.js"></script>
+        </div>
+
+        <div id="section2">
+            <h2>Gender Distribution by Major</h2>
             <button id="sortFemale" onclick="sortFemale()">Sort # Female</button>
             <button id="sortMale" onclick="sortMale()">Sort # Male</button>
             <button id="sortFemalePercent" onclick="sortFemalePercent()">Sort % Female</button>
             <button id="sortMalePercent" onclick="sortMalePercent()">Sort % Male</button>
-            <div id="gender"></div>
-            <script src="/engineering/engineering_gender.js"></script>
-
-        </div>
-        <div id="enrollmentLabel">
-            <h2>Enrollment by Major</h2>
-            <div id="chart"></div>
-            <script src="/engineering/engineering_enrollment.js"></script>
+            <div id="barChart"></div>
+            <script src="engineering_gender.js"></script>
         </div>
 
-        <div id="diversity">
+        <div id="section3">
             <h2>Undergraduate Enrollment By Race</h2>
             <button id="removeMajority" onclick="removeMajority(true)">Only Show Minority</button>
             <button id="replaceMajority" onclick="removeMajority(false)">Show all data</button>
@@ -101,17 +47,9 @@
             <script src="engineeringDiversity.js"></script>
         </div>
 
-        <div id="section3">
-            <h1>Section 3</h1>
-            <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        </div>
 
 
     </div>
-
-
-
-
 
 </body>
 

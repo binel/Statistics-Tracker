@@ -1,8 +1,8 @@
-var svg = dimple.newSvg("#barChart", 600, 525);
-d3.csv("gender_ex.csv", function (data) {
-    var barChart = new dimple.chart(svg, data);
+var svgGender = dimple.newSvg("#barChart", 600, 525);
+d3.csv("college_gender.csv", function (data) {
+    var barChart = new dimple.chart(svgGender, data);
     barChart.setBounds(60, 30, 510, 305);
-    var x = barChart.addCategoryAxis("x", "Major");
+    var x = barChart.addCategoryAxis("x", "College");
     var y = barChart.addMeasureAxis("y", "Students");
     y.tickFormat = ",.f";
     var mySeries = barChart.addSeries(["Gender"], dimple.plot.bar);
@@ -17,11 +17,11 @@ d3.csv("gender_ex.csv", function (data) {
 
 
 function sortMale() {
-    svg.selectAll('*').remove();
-    d3.csv("gender_ex.csv", function (data) {
-        var barChart = new dimple.chart(svg, data);
+    svgGender.selectAll('*').remove();
+    d3.csv("college_gender.csv", function (data) {
+        var barChart = new dimple.chart(svgGender, data);
         barChart.setBounds(60, 30, 510, 305);
-        var x = barChart.addCategoryAxis("x", "Major");
+        var x = barChart.addCategoryAxis("x", "College");
         x.addOrderRule(function (a, b) {
             console.log(a);
             return b.Students[0] - a.Students[0];
@@ -40,11 +40,11 @@ function sortMale() {
 }
 
 function sortFemale() {
-    svg.selectAll('*').remove();
-    d3.csv("gender_ex.csv", function (data) {
-        var barChart = new dimple.chart(svg, data);
+    svgGender.selectAll('*').remove();
+    d3.csv("college_gender.csv", function (data) {
+        var barChart = new dimple.chart(svgGender, data);
         barChart.setBounds(60, 30, 510, 305);
-        var x = barChart.addCategoryAxis("x", "Major");
+        var x = barChart.addCategoryAxis("x", "College");
         x.addOrderRule(function (a, b) {
             console.log(a);
             return b.Students[0] - a.Students[0];
@@ -68,11 +68,11 @@ function sortFemale() {
 }
 
 function sortMalePercent() {
-    svg.selectAll('*').remove();
-    d3.csv("gender_ex.csv", function (data) {
-        var barChart = new dimple.chart(svg, data);
+    svgGender.selectAll('*').remove();
+    d3.csv("college_gender.csv", function (data) {
+        var barChart = new dimple.chart(svgGender, data);
         barChart.setBounds(60, 30, 510, 305);
-        var x = barChart.addCategoryAxis("x", "Major");
+        var x = barChart.addCategoryAxis("x", "College");
         x.addOrderRule(function (a, b) {
             console.log(a);
             return (b.Students[0] / b.Students[2]) - (a.Students[0] / a.Students[2]);
@@ -90,11 +90,11 @@ function sortMalePercent() {
 }
 
 function sortFemalePercent() {
-    svg.selectAll('*').remove();
-    d3.csv("gender_ex.csv", function (data) {
-        var barChart = new dimple.chart(svg, data);
+    svgGender.selectAll('*').remove();
+    d3.csv("college_gender.csv", function (data) {
+        var barChart = new dimple.chart(svgGender, data);
         barChart.setBounds(60, 30, 510, 305);
-        var x = barChart.addCategoryAxis("x", "Major");
+        var x = barChart.addCategoryAxis("x", "College");
         x.addOrderRule(function (a, b) {
             console.log(a);
             return (b.Students[0] / b.Students[2]) - (a.Students[0] / a.Students[2]);
@@ -118,8 +118,8 @@ function sortFemalePercent() {
 
 function getLink(a, key){
     for (var j = 0;  j < a.length; j++){
-        console.log(a[j].Major);
-        if ((a[j].Major) == key) return a[j].Link;
+        console.log(a[j].College);
+        if ((a[j].College) == key) return a[j].Link;
     }
     return null;
 }

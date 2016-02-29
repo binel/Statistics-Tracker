@@ -27,12 +27,6 @@ d3.csv("agriculture_enrollment.csv", function (data) {
     ring.innerRadius = "50%";
     var myLegend = myChart.addLegend(500, 20, 90, 400, "left");
 
-    ring.addEventHandler("click", function (e) {
-        console.log(e);
-        console.log(getLink(data, e.seriesValue[0]));
-        //window.location.assign("../general/general.html");
-    })
-
     //set default color scheme
     myChart.defaultColors = [
                 new dimple.color("#1f77b4"),

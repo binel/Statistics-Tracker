@@ -12,13 +12,12 @@
     <div ng-include src="'../navbar.html'"></div>
 
     <!-- side bar -->
-    <h1>General</h1>
     <nav class="col-xs-2" id="myScrollspy">
         <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="100">
-            <li><a id="link1" href="#enrollmentLabel">Enrollment by College</a></li>
-            <li><a id="link2" href="#genderLabel">Gender Distribution by College</a></li>
-            <li><a id="link3" href="#diversity">Diversity by College</a></li>
-            <li><a id="link4" href="#stateLabel">Enrollment By State</a></li>
+            <li><a id="link1" style="color:black" href="#enrollmentLabel">Enrollment by College</a></li>
+            <li><a id="link2" style="color:black" href="#genderLabel">Gender Distribution by College</a></li>
+            <li><a id="link3" style="color:black" href="#diversity">Diversity by College</a></li>
+            <li><a id="link4" style="color:black" href="#stateLabel">Enrollment By State</a></li>
         </ul>
     </nav>
     <!-- body content -->
@@ -32,10 +31,14 @@
 
         </div>
 
-        <!-- TODO -->
         <div id="genderLabel">
             <h2>Gender Distribution By College</h2>
-            <!--<script src="/1/1.js"></script>-->
+            <button id="sortFemale" onclick="sortFemale()">Sort # Female</button>
+            <button id="sortMale" onclick="sortMale()">Sort # Male</button>
+            <button id="sortFemalePercent" onclick="sortFemalePercent()">Sort % Female</button>
+            <button id="sortMalePercent" onclick="sortMalePercent()">Sort % Male</button>
+            <div id="barChart"></div>
+            <script src="college_gender.js"></script>
 
         </div>
 

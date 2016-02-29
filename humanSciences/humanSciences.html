@@ -7,6 +7,7 @@
 </head>
 
 <body>
+
     <!-- add navbar-->
     <div ng-include src="'../navbar.html'"></div>
 
@@ -21,23 +22,13 @@
     <!-- body content -->
     <div class="col-xs-offset-2">
         <h1>College of Human Sciences</h1>
+
         <a href="..general/general.html">Back to General</a>
         <hr>
-
-
         <div id="enrollmentLabel">
             <h2>Enrollment by Major</h2>
             <div id="ringChart"></div>
             <script src="hsEnrollment.js"></script>
-        </div>
-
-        <div id="diversity">
-            <h3>Undergraduate Enrollment By Race</h3>
-            <button id="removeMajority" onclick="removeMajority(true)">Only Show Minority</button>
-            <button id="replaceMajority" onclick="removeMajority(false)">Show all data</button>
-            <div id="hsDiversity"></div>
-
-            <script src="hsDiversity.js"></script>
         </div>
 
         <div id="genderLabel">
@@ -47,11 +38,16 @@
             <button id="sortFemalePercent" onclick="sortFemalePercent()">Sort % Female</button>
             <button id="sortMalePercent" onclick="sortMalePercent()">Sort % Male</button>
             <div id="barChart"></div>
-            <!--<script src=".js"></script>-->
+            <script src="hs_gender.js"></script>
         </div>
 
-
-
+        <div id="diversity">
+            <h2>Undergraduate Enrollment By Race</h2>
+            <button id="removeMajority" onclick="removeMajority(true)">Only Show Minority</button>
+            <button id="replaceMajority" onclick="removeMajority(false)">Show all data</button>
+            <div id="hsDiversity"></div>
+            <script src="hsDiversity.js"></script>
+        </div>
     </div>
 
 </body>

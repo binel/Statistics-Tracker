@@ -1,5 +1,5 @@
 var svg = dimple.newSvg("#barChart", 600, 525);
-d3.csv("gender_ex.csv", function (data) {
+d3.csv("buisness_gender.csv", function (data) {
     var barChart = new dimple.chart(svg, data);
     barChart.setBounds(60, 30, 510, 305);
     var x = barChart.addCategoryAxis("x", "Major");
@@ -18,7 +18,7 @@ d3.csv("gender_ex.csv", function (data) {
 
 function sortMale() {
     svg.selectAll('*').remove();
-    d3.csv("gender_ex.csv", function (data) {
+    d3.csv("buisness_gender.csv", function (data) {
         var barChart = new dimple.chart(svg, data);
         barChart.setBounds(60, 30, 510, 305);
         var x = barChart.addCategoryAxis("x", "Major");
@@ -41,7 +41,7 @@ function sortMale() {
 
 function sortFemale() {
     svg.selectAll('*').remove();
-    d3.csv("gender_ex.csv", function (data) {
+    d3.csv("buisness_gender.csv", function (data) {
         var barChart = new dimple.chart(svg, data);
         barChart.setBounds(60, 30, 510, 305);
         var x = barChart.addCategoryAxis("x", "Major");
@@ -69,7 +69,7 @@ function sortFemale() {
 
 function sortMalePercent() {
     svg.selectAll('*').remove();
-    d3.csv("gender_ex.csv", function (data) {
+    d3.csv("buisness_gender.csv", function (data) {
         var barChart = new dimple.chart(svg, data);
         barChart.setBounds(60, 30, 510, 305);
         var x = barChart.addCategoryAxis("x", "Major");
@@ -91,7 +91,7 @@ function sortMalePercent() {
 
 function sortFemalePercent() {
     svg.selectAll('*').remove();
-    d3.csv("gender_ex.csv", function (data) {
+    d3.csv("buisness_gender.csv", function (data) {
         var barChart = new dimple.chart(svg, data);
         barChart.setBounds(60, 30, 510, 305);
         var x = barChart.addCategoryAxis("x", "Major");

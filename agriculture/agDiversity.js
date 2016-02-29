@@ -22,5 +22,3 @@ function removeMajority(removeMajority) {
     chart.data = dimple.filterData(chartData, "Race", filterValues);
     chart.draw();
 }
-
-
