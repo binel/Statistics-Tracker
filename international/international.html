@@ -1,0 +1,48 @@
+<html ng-app>
+
+<head>
+
+    <link rel="import" href="../header.html">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="datamaps.world.min.js"></script>
+
+    <style>
+        .map {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            border: 1px solid black;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- add navbar-->
+    <div ng-include src="'../navbar.html'"></div>
+
+    <!-- side bar -->
+    <nav class="col-xs-2" id="myScrollspy">
+        <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="100">
+            <li><a id="link1" style="color:black" href="#mapLabel">International Students By Country</a></li>
+        </ul>
+    </nav>
+    <!-- body content -->
+    <div class="col-xs-offset-2">
+        <h1>International</h1>
+        <hr>
+
+         <div id="mapLabel">
+            <h2>International Students By Country</h2>
+            <div class="map" id="map"></div>
+            <div class="table" id="table"></div>
+            <script src="worldmap.js"></script>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
