@@ -1,4 +1,4 @@
-var lasByRaceSVG = dimple.newSvg("#lasDiversity", 600, 400);
+var lasByRaceSVG = dimple.newSvg("#lasDiversity", 600, 620);
 var chartData;
 var allValues;
 var chart;
@@ -6,6 +6,7 @@ var chart;
 d3.csv("LASByRace.csv", function (data) {
     chartData = data;
     chart = new dimple.chart(lasByRaceSVG, data);
+    chart.setBounds(60,30,510,305);
     var x = chart.addCategoryAxis("x", "Major");
     x.addOrderRule("Ordinal");
     chart.addMeasureAxis("y", "Students");

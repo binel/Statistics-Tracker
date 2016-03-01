@@ -1,10 +1,11 @@
-var hsByRaceSVG = dimple.newSvg("#hsDiversity", 600, 400);
+var hsByRaceSVG = dimple.newSvg("#hsDiversity", 600, 620);
 var chartData;
 var allValues;
 //import CSV and build dataset
 d3.csv("HSByRace.csv", function (data) {
     chartData = data;
     chart = new dimple.chart(hsByRaceSVG, data);
+        chart.setBounds(60,30,510,305);
     var x = chart.addCategoryAxis("x", "Major");
     x.addOrderRule("Ordinal");
     chart.addMeasureAxis("y", "Students");
