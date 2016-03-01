@@ -5,6 +5,7 @@
     <link rel="import" href="../header.html">
     <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
     <script src="datamaps.world.min.js"></script>
+    <script src="https://rawgit.com/gka/d3-jetpack/master/d3-jetpack.js"></script>
 
     <style>
         .map {
@@ -14,6 +15,21 @@
             border: 1px solid black;
         }
 
+        th,
+        td {
+            padding: 0.3ex 1em 0.5ex 0;
+            border: 1px solid gray;
+            text-align: center;
+        }
+
+        img {
+            padding-left: 10px;
+        }
+
+        th.num,
+        td.num {
+            text-align: right;
+        }
     </style>
 
 </head>
@@ -26,7 +42,8 @@
     <!-- side bar -->
     <nav class="col-xs-2" id="myScrollspy">
         <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="100">
-            <li><a id="link1" style="color:black" href="#mapLabel">International Students By Country</a></li>
+            <li><a id="link1" style="color:black" href="#map">International Students By Country (Map)</a></li>
+            <li><a id="link1" style="color:black" href="#table">International Students By Country (Table)</a></li>
         </ul>
     </nav>
     <!-- body content -->
@@ -34,10 +51,13 @@
         <h1>International</h1>
         <hr>
 
-         <div id="mapLabel">
+        <div id="mapLabel">
             <h2>International Students By Country</h2>
             <div class="map" id="map"></div>
-            <div class="table" id="table"></div>
+            <br id="table">
+            <br>
+            <hr>
+            <div class="table" id="table1"></div>
             <script src="worldmap.js"></script>
         </div>
 

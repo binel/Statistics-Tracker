@@ -1,6 +1,6 @@
 d3.csv('international_enrollment.csv', function (data) {
 
-    console.log(data);
+    //console.log(data);
 
     var dataset = {}
 
@@ -42,7 +42,7 @@ d3.csv('international_enrollment.csv', function (data) {
             USA: 'darkgray',
             defaultFill: 'lightgray'
         },
-        responsive: true,
+        responsive: false,
         geographyConfig: {
             popupTemplate: function (geo, data) {
                 if (geo.id == 'USA') {
@@ -61,7 +61,58 @@ d3.csv('international_enrollment.csv', function (data) {
     });
 
 
-    window.addEventListener('resize', function () {
-        map.resize();
-    });
+
+    var columns = [
+        {
+            head: '',
+            cl: 'flags',
+            html:  function(d){
+                return '<img src="flags/' + d.Flag + '.png" height=30, width=50></img>';
+            }
+        },
+        {
+            head: 'Country',
+            cl: 'title',
+            html: d3.f('Country')
+        },
+        {
+            head: 'Students',
+            cl: 'num',
+            html: d3.f('Students')
+        }
+
+    ];
+
+    // create table
+    var table = d3.select('#table1')
+        .append('table');
+
+    // create table header
+    table.append('thead').append('tr')
+        .selectAll('th')
+        .data(columns).enter()
+        .append('th')
+        .attr('class', d3.f('cl'))
+        .text(d3.f('head'));
+
+    // create table body
+    table.append('tbody')
+        .selectAll('tr')
+        .data(data).enter()
+        .append('tr')
+        .selectAll('td')
+        .data(function (row, i) {
+            return columns.map(function (c) {
+                // compute cell values for this specific row
+                var cell = {};
+                d3.keys(c).forEach(function (k) {
+                    cell[k] = typeof c[k] == 'function' ? c[k](row, i) : c[k];
+                });
+                return cell;
+            });
+        }).enter()
+        .append('td')
+        .html(d3.f('html'))
+        .attr('class', d3.f('cl'));
+
 });

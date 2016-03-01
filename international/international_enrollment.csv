@@ -1,117 +1,117 @@
-Country,ISO,Students
-Afghanistan,AFG,4
-Albania,ALB,2
-Antigua and Barbuda,ATG,2
-Argentina,ARG,11
-Armenia ,ARM,2
-Australia,AUS,14
-Austria,AUT,2
-"Bahamas, The",BHS,4
-Bahrain,BHR,1
-Bangladesh,BGD,39
-Bolivia,BOL,1
-Botswana,BWA,3
-Brazil,BRA,50
-Bulgaria,BGR,1
-Burkino Faso,BFA,1
-Burma,MMR,1
-Cambodia,KHM,1
-Cameroon,CMR,3
-Canada,CAN,39
-Chile,CHL,2
-Colombia,COL,26
-"Congo, Democratic Rep of ",COD,2
-"Congo, Republic of",COG,1
-Costa Rica,CRI,3
-Croatia ,HRV,2
-Cyprus,CYP,2
-Czech Republic,CZE,2
-Dominica,DMA,2
-Dominican Republic,DOM,2
-Ecuador,ECU,12
-Egypt,EGY,21
-El Salvador,SLV,3
-Eritrea ,ERI,1
-Ethiopia,ETH,1
-Finland,FIN,2
-France,FRA,6
-Georgia,GEO,1
-Germany,DEU,9
-Ghana,GHA,9
-Greece,GRC,4
-Guatemala,GTM,2
-Guinea-Bissau,GNB,1
-Honduras,HND,1
-Hong Kong,HKG,21
-India,IND,575
-Indonesia,IDN,49
-Iran,IRN,80
-Iraq,IRQ,4
-Ireland,IRL,1
-Israel,ISR,5
-Italy,ITA,9
-Jamaica,JAM,1
-Japan,JPN,13
-Jordan,JOR,24
-Kazakhstan ,KAZ,5
-Kenya,KEN,6
-"Korea, South",KOR,235
-Kosovo,RKS,2
-Kuwait,KWT,11
-Latvia,LVA,1
-Lebanon,LBN,4
-Libya,LBY,7
-Lithuania ,LTU,2
-Malawi,MWI,1
-Malaysia,MYS,299
-Malta,MLT,  1
-Martinique,MTQ,1
-Mauritius,MUS,1
-Mexico,MEX,37
-Montenegro,MNE,  1
-Morocco,MAR,1
-Mozambique,MOZ,1
-Nepal,NPL,35
-Netherlands,NLD,3
-New Zealand,NZL,5
-Nigeria,NGA,30
-Oman,OMN,28
-Pakistan,PAK,20
-Panama,PAN,5
-People’s Republic of China,CHN,1796
-Peru,PER,6
-Philippines,PHL,6
-Poland,POL,1
-Portugal,PRT,1
-Qatar,QAT,5
-Romania,ROU,2
-Russia ,RUS,11
-Rwanda,RWA,4
-Saint Lucia,LCA,1
-Saudi Arabia,SAU,55
-Serbia,SRB,1
-Singapore,SGP,12
-South Sudan,SSD,1
-Spain,ESP,4
-Sri Lanka,LKA,43
-Sudan,SDN,2
-Sweden,SWE,6
-Switzerland,CHE,4
-Syria,SYR,1
-Taiwan,TWN,51
-Tanzania,TZA,5
-Thailand,THA,15
-The Gambia,GMB,1
-Togo,TGO,1
-Trinidad & Tobago,TTO,1
-Turkey,TUR,33
-Uganda,UGA,14
-Ukraine ,UKR,8
-United Arab Emirates,ARE,18
-United Kingdom,GBR,31
-Uruguay,URY,6
-Uzbekistan ,UZB,1
-Venezuela,VEN,14
-Vietnam,VNM,53
-Zambia,ZMB,3
-Zimbabwe,ZWE,2
+Flag,ISO,Students,Country
+China,CHN,1796,China
+India,IND,575,India
+Malaysia,MYS,299,Malaysia
+"Korea,-South",KOR,235,South Korea
+Iran,IRN,80,Iran
+Saudi-Arabia,SAU,55,Saudi Arabia
+Vietnam,VNM,53,Vietnam
+Taiwan,TWN,51,Taiwan
+Brazil,BRA,50,Brazil
+Indonesia,IDN,49,Indonesia
+Sri-Lanka,LKA,43,Sri Lanka
+Bangladesh,BGD,39,Bangladesh
+Canada,CAN,39,Canada
+Mexico,MEX,37,Mexico
+Nepal,NPL,35,Nepal
+Turkey,TUR,33,Turkey
+United-Kingdom,GBR,31,United Kingdom
+Nigeria,NGA,30,Nigeria
+Oman,OMN,28,Oman
+Colombia,COL,26,Colombia
+Jordan,JOR,24,Jordan
+Egypt,EGY,21,Egypt
+China,HKG,21,China
+Pakistan,PAK,20,Pakistan
+United-Arab-Emirates,ARE,18,United Arab Emirates
+Thailand,THA,15,Thailand
+Australia,AUS,14,Australia
+Uganda,UGA,14,Uganda
+Venezuela,VEN,14,Venezuela
+Japan,JPN,13,Japan
+Ecuador,ECU,12,Ecuador
+Singapore,SGP,12,Singapore
+Argentina,ARG,11,Argentina
+Kuwait,KWT,11,Kuwait
+Russia,RUS,11,Russia 
+Germany,DEU,9,Germany
+Ghana,GHA,9,Ghana
+Italy,ITA,9,Italy
+Ukraine,UKR,8,Ukraine
+Libya,LBY,7,Libya
+France,FRA,6,France
+Kenya,KEN,6,Kenya
+Peru,PER,6,Peru
+Philippines,PHL,6,Philippines
+Sweden,SWE,6,Sweden
+Uruguay,URY,6,Uruguay
+Israel,ISR,5,Israel
+Kazakhstan,KAZ,5,Kazakhstan 
+New-Zealand,NZL,5,New Zealand
+Panama,PAN,5,Panama
+Qatar,QAT,5,Qatar
+Tanzania,TZA,5,Tanzania
+Afghanistan,AFG,4,Afghanistan
+Bahamas,BHS,4,Bahamas
+Greece,GRC,4,Greece
+Iraq,IRQ,4,Iraq
+Lebanon,LBN,4,Lebanon
+Rwanda,RWA,4,Rwanda
+Spain,ESP,4,Spain
+Switzerland,CHE,4,Switzerland
+Botswana,BWA,3,Botswana
+Cameroon,CMR,3,Cameroon
+Costa-Rica,CRI,3,Costa Rica
+El-Salvador,SLV,3,El Salvador
+Netherlands,NLD,3,Netherlands
+Zambia,ZMB,3,Zambia
+Albania,ALB,2,Albania
+Antigua-and-Barbuda,ATG,2,Antigua and Barbuda
+Armenia,ARM,2,Armenia 
+Austria,AUT,2,Austria
+Chile,CHL,2,Chile
+Congo-(Democratic),COD,2,Congo (Democratic)
+Croatia,HRV,2,Croatia 
+Cyprus,CYP,2,Cyprus
+Czech-Republic,CZE,2,Czech Republic
+Dominica,DMA,2,Dominica
+Dominican-Republic,DOM,2,Dominican Republic
+Finland,FIN,2,Finland
+Guatemala,GTM,2,Guatemala
+Kosovo,RKS,2,Kosovo
+Lithuania,LTU,2,Lithuania 
+Romania,ROU,2,Romania
+Sudan,SDN,2,Sudan
+Zimbabwe,ZWE,2,Zimbabwe
+Bahrain,BHR,1,Bahrain
+Bolivia,BOL,1,Bolivia
+Bulgaria,BGR,1,Bulgaria
+Burkina-Faso,BFA,1,Burkina Faso
+Myanmar,MMR,1,Myanmars
+Cambodia,KHM,1,Cambodia
+Congo-(Republic),COG,1,Congo (Republic)
+Eritrea,ERI,1,Eritrea 
+Ethiopia,ETH,1,Ethiopia
+Georgia,GEO,1,Georgia
+Guinea-Bissau,GNB,1,Guinea Bissau
+Honduras,HND,1,Honduras
+Ireland,IRL,1,Ireland
+Jamaica,JAM,1,Jamaica
+Latvia,LVA,1,Latvia
+Malawi,MWI,1,Malawi
+Malta,MLT,1,Malta
+France,MTQ,1,Martinique
+Mauritius,MUS,1,Mauritius
+Montenegro,MNE,1,Montenegro
+Morocco,MAR,1,Morocco
+Mozambique,MOZ,1,Mozambique
+Poland,POL,1,Poland
+Portugal,PRT,1,Portugal
+Saint-Lucia,LCA,1,Saint Lucia
+Serbia,SRB,1,Serbia
+South-Sudan,SSD,1,South Sudan
+Syria,SYR,1,Syria
+Gambia,GMB,1,Gambia
+Togo,TGO,1,Togo
+Trinidad-and-Tobago,TTO,1,Trinidad and Tobago
+Uzbekistan,UZB,1,Uzbekistan 
