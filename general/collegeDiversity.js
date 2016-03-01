@@ -1,6 +1,6 @@
 //Dimple re-implementation
 
-var generalByRacesvg = dimple.newSvg("#diversity", 600, 400);
+var generalByRacesvg = dimple.newSvg("#diversity", 600, 500);
 var chart;
 var chartData;
 var allValues;
@@ -8,6 +8,7 @@ var allValues;
 d3.csv("generalByRace.csv", function (data) {
     chartData = data;
     chart = new dimple.chart(generalByRacesvg, data);
+    chart.setBounds(60,30,510,305);
     var x = chart.addCategoryAxis("x", "College");
     x.addOrderRule("Ordinal");
     chart.addMeasureAxis("y", "Students");

@@ -1,4 +1,4 @@
-var businessByRaceSVG = dimple.newSvg("#businessDiversity", 600, 400);
+var businessByRaceSVG = dimple.newSvg("#businessDiversity", 600, 550);
 var chartData;
 var allValues;
 var chart;
@@ -6,6 +6,7 @@ var chart;
 d3.csv("businessByRace.csv", function (data) {
     chartData = data;
     chart = new dimple.chart(businessByRaceSVG, data);
+    chart.setBounds(60,30,510,305);
     var x = chart.addCategoryAxis("x", "Major");
     x.addOrderRule("Ordinal");
     chart.addMeasureAxis("y", "Students");

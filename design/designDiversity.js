@@ -1,4 +1,4 @@
-var designByRaceSVG = dimple.newSvg("#designDiversity", 600, 525);
+var designByRaceSVG = dimple.newSvg("#designDiversity", 600, 560);
 var chartData;
 var allValues;
 var chart;
