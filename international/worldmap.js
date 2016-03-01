@@ -36,10 +36,6 @@ d3.csv('international_enrollment.csv', function (data) {
         data: dataset,
         projection: 'mercator',
         fills: {
-            HIGH: '#afafaf',
-            LOW: '#123456',
-            MEDIUM: 'blue',
-            USA: 'darkgray',
             defaultFill: 'lightgray'
         },
         responsive: false,
