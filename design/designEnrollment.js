@@ -30,7 +30,7 @@ d3.csv("design_enrollment.csv", function (data) {
     ring.addEventHandler("click", function(e){
         console.log(e);
         console.log(getLink(data, e.seriesValue[0]));
-        window.location.assign("../general/general.html");
+       // window.location.assign("../general/general.html");
     })
 
     //set default color scheme
