@@ -1,4 +1,4 @@
-var svg = dimple.newSvg("#barChart", 600, 525);
+var svg = dimple.newSvg("#barChart", 600, 620);
 d3.csv("design_gender.csv", function (data) {
     var barChart = new dimple.chart(svg, data);
     barChart.setBounds(60, 30, 510, 305);
