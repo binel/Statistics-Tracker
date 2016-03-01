@@ -1,166 +1,70 @@
-var dataset;
-var height = 500;
-var width = 1000;
-var id = "enrollment";
-var outerRadius = height / 2;
-var innerRadius = height / 3;
+function title(svg, title) {
 
-var pie = d3.layout.pie()
-    .value(function (d) {
-        return d.numStudents
-    });
-
-//define color scale
-var color = d3.scale.category20();
-
-d3.csv("../enrollment_stats.csv", function (data) {
-
-    //format data as pie layout
-    dataset = (pie(data));
-    console.log(dataset);
-    generateChart();
-    console.log(color.domain());
-});
-
-function generateChart() {
-
-    //create svg canvas for chart
-    svg = d3.select("#chart")
-        .append("svg")
-        .attr("id", id)
-        .attr("height", height)
-        .attr("width", width);
-
-
-    //draw arc paths
-    arc = d3.svg.arc()
-        .innerRadius(innerRadius)
-        .outerRadius(outerRadius);
-
-    //set up arc groups
-    var arcs = d3.svg.selectAll("g.arc")
-        .data(dataset)
+    svg.selectAll("title_text")
+        .data([title])
         .enter()
-        .append("g") //new group
-        .attr("class", "arc")
-        .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")"); //translate group to right place
-
-    //draw arc paths
-    var paths = arcs.append("path")
-        .attr("fill", function (d, i) {
-            return color(d.data.major);
-        })
-        .attr("d", arc); //define description for each path
-
-    //add text labels
-    arcs.append("text")
-        .attr("transform", function (d) {
-            return "translate(" + arc.centroid(d) + ")"; //place text in centroid of arc
-        })
-        .attr("text-anchor", "middle")
-        .text(function (d) {
-            return d.value; //make text label the number of students
-        })
-        .attr("fill", "white");
-
-    buildLegend();
-
-    addTooltips();
-
-
-}
-
-function buildLegend() {
-    var legendRectSize = 18;
-    var legendSpacing = 4;
-
-    var legend = d3.svg.selectAll("g.legend")
-        .data(color.domain())
-        .enter()
-        .append("g")
-        .attr("class", "legend")
-        .attr("transform", function (d, i) {
-            var h = legendRectSize + legendSpacing;
-            var offset = h * color.domain().length / 2;
-            var horz = legendRectSize + 500;
-            var vert = i * h + height / 4;
-            return "translate(" + horz + "," + vert + ")";
-        });
-
-
-    //add colored square
-    legend.append("rect")
-        .attr("width", legendRectSize)
-        .attr("height", legendRectSize)
-        .style("fill", color)
-        .style("stroke", color);
-        //onclick handler for enabling/disabling major
-
-    //add legend text
-    legend.append('text')
-        .attr("x", legendRectSize + legendSpacing)
-        .attr("y", legendRectSize - legendSpacing)
+        .append("text")
+        .attr("x", 10)
+        .attr("y", 15)
+        .style("font-family", "sans-serif")
+        .style("font-size", "16px")
+        .style("color", "Black")
         .text(function (d) {
             return d;
         });
-
-
 }
 
+d3.csv("enrollment_stats.csv", function (data) {
+
+    var svg03 = dimple.newSvg("#ringChart", 800, 600);
+    svg03.attr("id", "svg03");
+    title(svg03, "Major / Student")
+    var myChart = new dimple.chart(svg03, data);
+    myChart.setBounds(20, 20, 460, 460)
+    var p = myChart.addMeasureAxis("p", "Students");
+    p.tickFormat = ",.f";
+    var ring = myChart.addSeries("Major", dimple.plot.pie);
+    ring.innerRadius = "50%";
+    var myLegend = myChart.addLegend(500, 20, 90, 300, "left");
+
+    ring.addEventHandler("click", function(e){
+        console.log(e);
+        console.log(getLink(data, e.seriesValue[0]));
+    })
+
+    //set default color scheme
+    myChart.defaultColors = [
+                new dimple.color("#1f77b4"),
+                new dimple.color("#aec7e8"),
+                new dimple.color("#ff7f0e"),
+                new dimple.color("#ffbb78"),
+                new dimple.color("#2ca02c"),
+                new dimple.color("#98df8a"),
+                new dimple.color("#d62728"),
+                new dimple.color("#ff9896"),
+                new dimple.color("#9467bd"),
+                new dimple.color("#c5b0d5"),
+                new dimple.color("#8c564b"),
+                new dimple.color("#c49c94"),
+                new dimple.color("#e377c2"),
+                new dimple.color("#f7b6d2"),
+                new dimple.color("#7f7f7f"),
+                new dimple.color("#c7c7c7"),
+                new dimple.color("#bcbd22"),
+                new dimple.color("#dbdb8d"),
+                new dimple.color("#17becf"),
+                new dimple.color("#9edae5")
+            ];
+
+    myChart.draw();
 
 
-function addTooltips() {
-    var tooltip = d3.select("#chart")
-        .append("div")
-        .attr("class", "tooltip");
+});
 
-    tooltip.append("div")
-        .attr("class", "label");
-
-    tooltip.append("div")
-        .attr("class", "percent");
-
-    var paths = d3.svg.selectAll("path");
-
-    paths.on('mouseover', function (d) {
-
-        var pathSel = d3.select(this);
-
-        //darken all other colors
-        paths.attr("fill", function (d, i) {
-            var rgb = d3.rgb(color(d.data.major));
-            return rgb.darker(2.5);
-        })
-
-        //keep color of selected
-        pathSel.attr("fill", function (d, i) {
-            return color(d.data.major);
-        })
-
-        //sum up the number of students
-        var total = d3.sum(dataset.map(function (d) {
-            return d.data.numStudents;
-        }));
-        //calculate the percentage
-        var percent = Math.round(1000 * d.data.numStudents / total) / 10;
-        //fill the tooltip
-        tooltip.select('.label').html(d.data.major);
-        tooltip.select('.percent').html(percent + '%');
-        tooltip.style('display', 'block');
-    });
-
-    paths.on('mousemove', function (d) {
-        tooltip.style('top', (d3.event.pageY - 40) + 'px')
-            .style('left', (d3.event.pageX - 10) + 'px');
-    });
-
-    paths.on('mouseout', function () {
-        tooltip.style('display', 'none');
-
-        //reset colors
-        paths.attr("fill", function (d, i) {
-            return color(d.data.major);
-        })
-    });
-
+function getLink(a, key){
+    for (var j = 0;  j < a.length; j++){
+        console.log(a[j].Major);
+        if ((a[j].Major) == key) return a[j].Students;
+    }
+    return null;
 }
