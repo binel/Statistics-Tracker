@@ -16,7 +16,7 @@ function title(svg, title) {
 
 d3.csv("general_enrollment.csv", function (data) {
 
-    var svg03 = dimple.newSvg("#ringChart", 600, 500);
+    var svg03 = dimple.newSvg("#ringChart", 800, 500);
     svg03.attr("id", "ringSvg");
     title(svg03, "Students/College")
     var myChart = new dimple.chart(svg03, data);
